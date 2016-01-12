@@ -15,10 +15,11 @@ def getNext(password):
 
     while not found:
         if pwd[i] < 'z':
-           pwd[i] = chr(ord(pwd[i])+1)  # ord() renvoi la valeur ASCII d'un caractère, on ajout 1 à cette valeur, chr() permet de convertir cet valeur en char
-           found = True             
+			pwd[i] = chr(ord(pwd[i])+1)  # ord() renvoi la valeur ASCII d'un caractère, on ajout 1 à cette valeur, chr() permet de convertir cet valeur en char
+			found = True             
         else:
-           i = i-1 
+			pwd[i] = 'a'
+			i = i-1
     
     return ''.join(pwd) # On renvoi au minimum une chaine vide, avec le password à la suite
 
