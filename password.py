@@ -1,4 +1,11 @@
-# coding: utf-8 
+# coding: utf-8
+
+def hasSeries(password):
+    return False
+def hasTwoPairs(password):
+    return False
+def hasNoBadChar(password):
+    return False
 def getNext(password):
     """
     Série de tests exprimés en doctest

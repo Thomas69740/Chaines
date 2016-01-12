@@ -16,5 +16,19 @@ class TestPassword(unittest.TestCase):
     def test_getNextNoPwd(self):
         self.assertRaises(ValueError, pwd.getNext, "")
 
+    def test_hasSeries(self):
+        self.assertEqual(pwd.hasSeries("aaa"), True)
+        self.assertEqual(pwd.hasSeries("aabbcc"), False)
+
+    def test_hasTwoPairs(self):
+        self.assertEqual(pwd.hasTwoPairs("abab"), False)
+        self.assertEqual(pwd.hasTwoPairs("aabcc"), True)
+
+    def test_hasNoBadCharFalse(self):
+        self.assertEqual(pwd.hasNoBadChar("aai"), False)
+        self.assertEqual(pwd.hasNoBadChar("aao"), False)
+        self.assertEqual(pwd.hasNoBadChar("aal"), False)
+        self.assertEqual(pwd.hasNoBadChar("aabcc"), True)
+
 # Permet d'exécuter les tests si ce fichier est exécuté
 unittest.main()
