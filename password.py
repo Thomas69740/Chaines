@@ -1,11 +1,56 @@
 # coding: utf-8
 
 def hasSeries(password):
+    pwd = list(password)
+    i = len(pwd)-1
+    count = 0
+    while i >= 0:
+        if count == 0:
+            currentChar = pwd[i]
+        if currentChar == pwd[i]:
+            count += 1
+        else:
+            count = 0
+        if count == 3:
+            return True
+        i += 1
     return False
+
 def hasTwoPairs(password):
-    return False
+    pwd = list(password)
+    i = len(pwd)-1
+    count = 0
+    pair1, pair2 = False
+    while i >= 0:
+        if count == 0:
+            currentChar = pwd[i]
+        if currentChar == pwd[i]:
+            count += 1
+        else:
+            count = 0
+        if count == 2 and pair1 == False:
+            pair1 = True
+        if count == 2 and pair1 == True:
+            pair2 = True
+        i += 1
+    if pair1 == True and pair2 == True:
+        return True
+    else:
+        return False
+
 def hasNoBadChar(password):
-    return False
+    found = False
+    i=len(password)-1
+    while found == False:
+        if password[i] == 'i' or password[i] == 'o' or password[i] == 'l':
+            found = True
+        else:
+            found = False
+        if i > 0:
+            i -= 1
+        else:
+            return found
+
 def getNext(password):
     """
     Série de tests exprimés en doctest
