@@ -8,3 +8,7 @@ Question 1:
 
 Le programme plantera si la chaine n'est composée que de 'z'
 Il plantera si la chaine est vide en entrée, a cause de len(pwd) - 1
+
+Question 2:
+
+Il est possible d'avoir 26^N possibilités

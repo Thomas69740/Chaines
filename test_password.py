@@ -10,6 +10,11 @@ class TestPassword(unittest.TestCase):
     def test_getNextEndLine(self):
         self.assertEqual(pwd.getNext("abhz"), "abia")
 
+    def test_getNextWrongPwd(self):
+        self.assertRaises(ValueError, pwd.getNext, "zzzz")
+
+    def test_getNextNoPwd(self):
+        self.assertRaises(ValueError, pwd.getNext, "")
 
 # Permet d'exécuter les tests si ce fichier est exécuté
 unittest.main()
